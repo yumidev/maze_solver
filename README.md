@@ -4,8 +4,8 @@
 $ ruby maze_solver.rb
 ```
 
-- You can modify the maze. Open maze1.txt and modify.
+- You can modify the maze. Open maze_map.txt and modify.
 
 ```
-$ open maze1.txt
+$ open maze_map.txt
 ```

@@ -1,6 +1,6 @@
 require 'pry'
 
-f = File.open "maze1.txt", "r"
+f = File.open "maze_map.txt", "r"
 
 maze = f.readlines
 
@@ -9,7 +9,7 @@ maze.each do |line|
 end
 
 def solve_maze
-  f = File.open "maze1.txt", "r"
+  f = File.open "maze_map.txt", "r"
   maze = f.readlines
 
   maze_column_length = maze[0].length
