@@ -21,14 +21,10 @@ def solve_maze
   present_row = start_row
   present_column = start_column
 
-  north = maze[present_row - 1][present_column]
-  south = maze[present_row + 1][present_column]
-  east = maze[present_row][present_column + 1]
-  west = maze[present_row][present_column - 1]
-  nesw_array = [maze[present_row - 1][present_column], maze[present_row][present_column + 1], maze[present_row + 1][present_column], maze[present_row][present_column - 1]]
+  empty_space_check = [maze[present_row - 1][present_column], maze[present_row][present_column + 1], maze[present_row + 1][present_column], maze[present_row][present_column - 1]]
 # when "E" is found, the game ends
-  until nesw_array.include?("E")
-    case nesw_array.index " "
+  until empty_space_check.include?("E")
+    case empty_space_check.index " "
     when 0
       maze[present_row - 1][present_column]="X"
       present_row -= 1
@@ -44,10 +40,10 @@ def solve_maze
     else
       puts "This maze can't be solved."
     end
-    nesw_array = [maze[present_row - 1][present_column], maze[present_row][present_column + 1], maze[present_row + 1][present_column], maze[present_row][present_column - 1]]
-    maze.each do |line|
-      puts line
-    end
+    empty_space_check = [maze[present_row - 1][present_column], maze[present_row][present_column + 1], maze[present_row + 1][present_column], maze[present_row][present_column - 1]]
+  end
+  maze.each do |line|
+    puts line
   end
 end
 
